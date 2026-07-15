@@ -79,6 +79,14 @@
   </div>
 </header>
 
+<section class="hero" aria-labelledby="heroTitle">
+  <div class="hero-inner">
+    <h1 id="heroTitle" data-i18n="heroTitle">Senior .NET Interview Prep</h1>
+    <p data-i18n="heroText">245 deep, bilingual questions with answers, code and trade-offs — across the whole .NET stack. Search, filter by topic and level, bookmark, and drill with quiz mode.</p>
+    <div class="hero-stats" id="heroStats" aria-hidden="true"></div>
+  </div>
+</section>
+
 <main class="layout">
   <div class="drawer-backdrop" id="drawerBackdrop"></div>
   <aside class="sidebar" id="sidebar" aria-label="Filters">
@@ -106,7 +114,7 @@
 
   <section aria-label="Questions">
     <div class="toolbar">
-      <div class="result-count"><span id="count">0</span> <span data-i18n="questions" style="color:var(--text)">questions</span></div>
+      <div class="result-count" aria-live="polite"><span id="count">0</span> <span data-i18n="questions" style="color:var(--text)">questions</span></div>
       <div class="active-filters" id="activeFilters"></div>
       <div class="spacer"></div>
       <label class="visually-hidden" for="sortSel">Sort</label>

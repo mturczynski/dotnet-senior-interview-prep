@@ -31,6 +31,12 @@
   /* ---------- i18n for UI chrome ---------- */
   var I18N = {
     tagline:      { pl: "Dwujęzyczny zestaw na poziom senior", en: "Bilingual senior-level study deck" },
+    heroTitle:    { pl: "Przygotowanie do rozmowy senior .NET", en: "Senior .NET Interview Prep" },
+    heroText:     { pl: "245 dogłębnych, dwujęzycznych pytań z odpowiedziami, kodem i kompromisami — z całego stosu .NET. Szukaj, filtruj po temacie i poziomie, dodawaj do zakładek i ćwicz w trybie quizu.", en: "245 deep, bilingual questions with answers, code and trade-offs — across the whole .NET stack. Search, filter by topic and level, bookmark, and drill with quiz mode." },
+    statTopics:   { pl: "tematów", en: "topics" },
+    statQ:        { pl: "pytań", en: "questions" },
+    statLevels:   { pl: "poziomy: Śred./Senior/Ekspert", en: "levels: Mid/Senior/Expert" },
+    statLang:     { pl: "języki: PL / EN", en: "languages: PL / EN" },
     quiz:         { pl: "Quiz", en: "Quiz" },
     difficulty:   { pl: "Poziom trudności", en: "Difficulty" },
     mid:          { pl: "Śred.", en: "Mid" },
@@ -253,6 +259,12 @@
     if (state.bookmarks.size) { bc.style.display="inline-block"; bc.textContent=state.bookmarks.size; } else bc.style.display="none";
     $("#searchClear").classList.toggle("show", !!state.search);
     $("#footerStats").textContent = ALL.length + (state.lang==="pl"?" pytań • "+Object.keys(TOPIC_META).length+" tematów • PL/EN":" questions • "+Object.keys(TOPIC_META).length+" topics • PL/EN");
+    var nTopics = {}; ALL.forEach(function(q){ nTopics[q.topic]=1; });
+    $("#heroStats").innerHTML =
+      '<span class="hs"><b>'+ALL.length+'</b> '+t("statQ")+'</span>'+
+      '<span class="hs"><b>'+Object.keys(nTopics).length+'</b> '+t("statTopics")+'</span>'+
+      '<span class="hs">'+t("statLevels")+'</span>'+
+      '<span class="hs">'+t("statLang")+'</span>';
   }
 
   function render() {
