@@ -454,6 +454,19 @@
     if (b){ var code=b.parentNode.querySelector("code").innerText; navigator.clipboard && navigator.clipboard.writeText(code).then(function(){toast(t("copied"));}); }
   });
 
+  /* ---------- Focus trap for the quiz dialog ---------- */
+  function trapFocus(e){
+    if (!quiz.active || e.key !== "Tab") return;
+    var ov = $("#quizOverlay");
+    var f = $$('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])', ov)
+      .filter(function(el){ return el.offsetParent !== null || el === document.activeElement; });
+    if (!f.length) return;
+    var first = f[0], last = f[f.length-1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+  document.addEventListener("keydown", trapFocus);
+
   /* ---------- Global keyboard ---------- */
   document.addEventListener("keydown", function(e){
     if (quiz.active) {
