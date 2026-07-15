@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mturczynski.github.io/dotnet-senior-interview-prep/sitemap.xml

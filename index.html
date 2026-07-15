@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>.NET Senior Interview Prep — 240+ Q&A (PL/EN) | C#, ASP.NET Core, EF Core, System Design</title>
+<meta name="description" content="Free, interactive study deck for senior .NET developer interviews. 240+ deep, bilingual (Polish/English) questions with answers, code, trade-offs and a quiz mode — covering C#, async, EF Core, ASP.NET Core, architecture, performance, caching, messaging, security and system design.">
+<meta name="keywords" content=".NET interview, C# interview questions, senior .NET, ASP.NET Core, EF Core, async await, system design, design patterns, SOLID, pytania rekrutacyjne .NET">
+<meta name="author" content=".NET Senior Interview Prep">
+<meta name="robots" content="index, follow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#512bd4">
+<link rel="canonical" href="https://mturczynski.github.io/dotnet-senior-interview-prep/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content=".NET Senior Interview Prep — 240+ bilingual Q&A">
+<meta property="og:description" content="Deep, interactive senior .NET interview questions with code, trade-offs and quiz mode. Polish & English.">
+<meta property="og:url" content="https://mturczynski.github.io/dotnet-senior-interview-prep/">
+<meta property="og:site_name" content=".NET Senior Interview Prep">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content=".NET Senior Interview Prep — 240+ bilingual Q&A">
+<meta name="twitter:description" content="Deep, interactive senior .NET interview questions with code, trade-offs and quiz mode. Polish & English.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23512bd4'/%3E%3Ctext x='50' y='69' font-size='54' font-family='sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3E.N%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23512bd4'/%3E%3Ctext x='50' y='69' font-size='54' font-family='sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3E.N%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": ".NET Senior Interview Prep",
+  "description": "Interactive bilingual (Polish/English) study deck of 240+ senior .NET developer interview questions with detailed answers, code examples and a quiz mode.",
+  "educationalLevel": "Advanced",
+  "learningResourceType": "Q&A flashcards",
+  "inLanguage": ["en", "pl"],
+  "about": ["C#", ".NET", "ASP.NET Core", "Entity Framework Core", "System Design", "Software Architecture"],
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#results">Skip to questions</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#" aria-label=".NET Senior Interview Prep — home">
+      <span class="brand-mark" aria-hidden="true">.N</span>
+      <span>
+        <span class="brand-title">.NET Senior <span style="color:var(--accent)">Interview Prep</span></span><br>
+        <span class="brand-sub" data-i18n="tagline">Bilingual senior-level study deck</span>
+      </span>
+    </a>
+
+    <div class="header-actions">
+      <button class="iconbtn mobile-filter-btn" id="openFilters" aria-label="Open filters">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg>
+      </button>
+      <div class="seg" role="group" aria-label="Language">
+        <button id="langPL" aria-pressed="false">PL</button>
+        <button id="langEN" aria-pressed="true">EN</button>
+      </div>
+      <button class="iconbtn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button class="iconbtn btn-primary" id="quizBtn" style="color:#fff">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        <span data-i18n="quiz">Quiz</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="searchbar">
+    <div class="search-wrap">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="search" type="search" autocomplete="off" spellcheck="false" data-i18n-ph="searchph" placeholder="Search questions, code, tags…" aria-label="Search questions">
+      <button class="search-clear" id="searchClear" aria-label="Clear search">&times;</button>
+    </div>
+  </div>
+</header>
+
+<main class="layout">
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="sidebar" id="sidebar" aria-label="Filters">
+    <button class="btn-block sidebar-close" id="closeFilters"><span data-i18n="done">Done</span></button>
+
+    <div class="panel">
+      <h2 data-i18n="difficulty">Difficulty</h2>
+      <div class="diff-row" role="group" aria-label="Filter by difficulty">
+        <button class="diff-btn" data-diff="mid" aria-pressed="false" data-i18n="mid">Mid</button>
+        <button class="diff-btn" data-diff="senior" aria-pressed="false" data-i18n="senior">Senior</button>
+        <button class="diff-btn" data-diff="expert" aria-pressed="false" data-i18n="expert">Expert</button>
+      </div>
+      <button class="btn-block" id="bookmarkFilter" aria-pressed="false" style="margin-top:10px">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        <span data-i18n="bookmarksOnly">Bookmarks only</span> <span id="bmCount" class="cnt" style="display:none"></span>
+      </button>
+    </div>
+
+    <div class="panel">
+      <h2 data-i18n="topics">Topics</h2>
+      <div class="chip-list" id="topicList"></div>
+    </div>
+    <button class="btn-block" id="resetFilters"><span data-i18n="reset">Reset all filters</span></button>
+  </aside>
+
+  <section aria-label="Questions">
+    <div class="toolbar">
+      <div class="result-count"><span id="count">0</span> <span data-i18n="questions" style="color:var(--text)">questions</span></div>
+      <div class="active-filters" id="activeFilters"></div>
+      <div class="spacer"></div>
+      <label class="visually-hidden" for="sortSel">Sort</label>
+      <select class="select" id="sortSel">
+        <option value="topic" data-i18n="sortTopic">By topic</option>
+        <option value="diffAsc" data-i18n="sortEasy">Easiest first</option>
+        <option value="diffDesc" data-i18n="sortHard">Hardest first</option>
+      </select>
+      <button class="iconbtn" id="expandAll" data-i18n="expandAll">Expand all</button>
+    </div>
+
+    <div class="cards" id="results" role="list"></div>
+
+    <div class="empty" id="empty" style="display:none">
+      <div class="big">🔍</div>
+      <h3 data-i18n="noResultsTitle">No questions found</h3>
+      <p data-i18n="noResultsText">Try a different search term or reset the filters.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>
+    <strong data-i18n="footerTitle">.NET Senior Interview Prep</strong> —
+    <span data-i18n="footerText">an open, free study deck. Content is educational and independently written.</span>
+  </p>
+  <p id="footerStats" style="margin-top:6px"></p>
+</footer>
+
+<!-- Quiz overlay -->
+<div class="quiz-overlay" id="quizOverlay" role="dialog" aria-modal="true" aria-label="Quiz mode">
+  <div class="quiz-top">
+    <div class="quiz-top-inner">
+      <div class="quiz-progress-wrap">
+        <div class="quiz-progress-txt"><span id="quizPos">1 / 10</span><b id="quizScore">0 ✓</b></div>
+        <div class="progress-track"><div class="progress-fill" id="quizFill" style="width:0%"></div></div>
+      </div>
+      <button class="iconbtn" id="quizClose" aria-label="Exit quiz"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+  </div>
+  <div class="quiz-scroll" id="quizScroll">
+    <div class="quiz-card" id="quizContent"></div>
+  </div>
+  <div class="quiz-nav" id="quizNav">
+    <button class="iconbtn" id="quizPrev" data-i18n="prev">← Prev</button>
+    <div class="spacer"></div>
+    <button class="iconbtn" id="quizSkip" data-i18n="skip">Skip</button>
+    <button class="iconbtn btn-primary" id="quizNext" style="color:#fff" data-i18n="next">Next →</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
